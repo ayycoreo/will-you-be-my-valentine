@@ -16,18 +16,18 @@ export default function Page() {
       "Are you sure?",
       "What if I asked really nicely?",
       "Pretty please",
-      "With a chocolate rice cake on top",
-      "What about a matcha frostie",
-      "PLEASE POOKIE",
-      "But :*(",
-      "I am going to die",
-      "Yep im dead",
-      "ok ur talking to nathan's ghost",
-      "please babe",
-      ":((((",
-      "PRETTY PLEASE",
-      "Estoy muerto",
-      "No :(",
+      "With a mcdonalds frappe and flowers?",
+      "What about a new coach bag? ;)",
+      "PLEASE BABY",
+      "But why not.... :(",
+      "so you want to betray me...",
+      "why are you like this",
+      "girl please.",
+      "the yes button will only be bigger..",
+      "bro cmon",
+      "stop trolling",
+      "POR FAVOR ",
+      "gg",
     ];
 
     return phrases[Math.min(noCount, phrases.length - 1)];
@@ -38,7 +38,7 @@ export default function Page() {
       {yesPressed ? (
         <>
           <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
-          <div className="my-4 text-4xl font-bold">WOOOOOO!!! I love you pookie!! ;))</div>
+          <div className="my-4 text-4xl font-bold">YAY! NOW OPEN THE DOOR I AM FREEZING! </div>
         </>
       ) : (
         <>
