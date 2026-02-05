@@ -77,6 +77,8 @@ html, body {
   cursor: pointer;
   transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
   box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+  max-width: 420px;
+  white-space: nowrap;
 }
 
 .btn:hover{
@@ -113,10 +115,15 @@ html, body {
 }
 
 .fat-yes{
-  transform: scale(1.4);
+  /* Don't scale with transform (avoids layout overflow). Increase padding and font-size instead. */
   padding-left: 2rem;
   padding-right: 2rem;
+  font-size: 1.05rem;
   box-shadow: 0 28px 64px rgba(255,111,163,0.22);
+  display: inline-block;
+  max-width: 480px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .exploded-message{
@@ -151,6 +158,24 @@ html, body {
 @media (min-width: 640px){
   .hero-img{ width: 240px; }
   .title{ font-size: 2.75rem; }
+}
+
+/* Spotify iframe sizing to remove large empty space */
+iframe[data-testid="embed-iframe"]{
+  width: min(640px, 50%);
+  height: 352px;
+  border-radius: 12px;
+  border: 0;
+  display: block;
+  margin: 12px auto 0 auto;
+}
+
+@media (max-width: 430px) {
+  iframe[data-testid="embed-iframe"]{
+    width: 90% !important;
+    height: 220px !important;
+    margin-top: 8px;
+  }
 }
 
 /* Mobile / small screens (iPhone widths) */
@@ -188,6 +213,9 @@ html, body {
     padding: 0.9rem 1rem;
     font-size: 1rem;
     border-radius: 12px;
+    /* allow wrapping on very small screens so huge letters don't overflow */
+    white-space: normal;
+    word-break: break-word;
   }
 
   .btn-yes.fat-yes{

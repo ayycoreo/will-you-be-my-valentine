@@ -7,7 +7,9 @@ export default function Page() {
   const [yesPressed, setYesPressed] = useState(false);
   const [exploded, setExploded] = useState(false);
   const [noVisible, setNoVisible] = useState(true);
-  const yesButtonSize = noCount * 20 + 16;
+  // cap yes button text size so it doesn't overflow small screens
+  const rawYesSize = noCount * 20 + 16;
+  const yesButtonSize = Math.min(rawYesSize, 72);
   const NO_PHRASES = [
     "No",
     "Are you sure?",
@@ -20,7 +22,7 @@ export default function Page() {
     "so you want to betray me...",
     "why are you like this",
     "girl please.",
-    "the yes button will only be bigger..",
+    "stop pressing no..",
     "bro cmon",
     "stop trolling",
     "POR FAVOR",
@@ -78,7 +80,7 @@ export default function Page() {
             alt="cute bear with roses"
           />
           <h1 className="title">Hi Aniyah... will you be my valentine ❤️?</h1>
-          <h2 className="subtitle">i dare you to say no...just watch what happens(-__-)</h2>
+          <h2 className="subtitle">i dare you to say no...just watch what happens😡</h2>
           <div className="btn-row">
             <button
               className={`btn btn-yes ${exploded ? "fat-yes" : ""}`}
