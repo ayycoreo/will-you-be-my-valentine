@@ -7,7 +7,6 @@ export default function Page() {
   const [yesPressed, setYesPressed] = useState(false);
   const [exploded, setExploded] = useState(false);
   const [noVisible, setNoVisible] = useState(true);
-  // cap yes button text size so it doesn't overflow small screens
   const rawYesSize = noCount * 20 + 16;
   const yesButtonSize = Math.min(rawYesSize, 72);
   const NO_PHRASES = [

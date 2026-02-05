@@ -23,7 +23,6 @@ html, body {
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
-  /* account for device safe area (notch) and provide comfortable padding on mobile */
   padding: calc(1.25rem + env(safe-area-inset-top, 0)) 1rem calc(1.75rem + env(safe-area-inset-bottom, 0));
   background-image: linear-gradient(var(--overlay-dark), var(--overlay-dark)), url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExenFpM2FkZTcxMG1zd2I3dzA0aXgxcDV4bGk2ZTFvN3p0bjMyZHAxMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LhSwyMq836zy2okQgN/giphy.gif');
   background-size: cover;
@@ -115,7 +114,6 @@ html, body {
 }
 
 .fat-yes{
-  /* Don't scale with transform (avoids layout overflow). Increase padding and font-size instead. */
   padding-left: 2rem;
   padding-right: 2rem;
   font-size: 1.05rem;
@@ -160,7 +158,6 @@ html, body {
   .title{ font-size: 2.75rem; }
 }
 
-/* Spotify iframe sizing to remove large empty space */
 iframe[data-testid="embed-iframe"]{
   width: min(640px, 50%);
   height: 352px;
@@ -213,7 +210,6 @@ iframe[data-testid="embed-iframe"]{
     padding: 0.9rem 1rem;
     font-size: 1rem;
     border-radius: 12px;
-    /* allow wrapping on very small screens so huge letters don't overflow */
     white-space: normal;
     word-break: break-word;
   }
