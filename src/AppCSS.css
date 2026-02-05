@@ -23,6 +23,8 @@ html, body {
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+  /* account for device safe area (notch) and provide comfortable padding on mobile */
+  padding: calc(1.25rem + env(safe-area-inset-top, 0)) 1rem calc(1.75rem + env(safe-area-inset-bottom, 0));
   background-image: linear-gradient(var(--overlay-dark), var(--overlay-dark)), url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExenFpM2FkZTcxMG1zd2I3dzA0aXgxcDV4bGk2ZTFvN3p0bjMyZHAxMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LhSwyMq836zy2okQgN/giphy.gif');
   background-size: cover;
   background-position: center;
@@ -149,4 +151,51 @@ html, body {
 @media (min-width: 640px){
   .hero-img{ width: 240px; }
   .title{ font-size: 2.75rem; }
+}
+
+/* Mobile / small screens (iPhone widths) */
+@media (max-width: 430px) {
+  .valentine-page{
+    padding: calc(1rem + env(safe-area-inset-top, 0)) 0.75rem calc(1.25rem + env(safe-area-inset-bottom, 0));
+    gap: 0.75rem;
+  }
+
+  .hero-img{
+    width: 140px;
+    border-width: 4px;
+    border-radius: 12px;
+  }
+
+  .title{
+    font-size: 1.6rem;
+    line-height: 1.2;
+    padding-bottom: 0.25rem;
+  }
+
+  .subtitle{
+    font-size: 0.95rem;
+  }
+
+  .btn-row{
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .btn{
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  .btn-yes.fat-yes{
+    transform: scale(1.08);
+  }
+
+  iframe[data-testid="embed-iframe"]{
+    width: 90% !important;
+    height: 220px !important;
+  }
 }
